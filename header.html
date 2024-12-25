@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body{
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      *{
+        box-sizing: border-box;
+      }
+      .word{
+        text-decoration: none; 
+        color: white;
+      }
+      .boxcon{
+        display: flex;justify-content: center;gap: 24px;
+      }
+      .box{
+        display: inline-block;
+        width: 384px;
+        height: 527px;
+        border-radius: 5%;
+        background-color: white;
+      }
+      .boxheader{
+        display: inline-block; width: 384px; height: 92px;
+      }
+      .boxtitle{
+            display: flex;
+            align-items: center;
+            margin-top: 40px;
+            margin-left: 25px;
+            width: 300px;
+            height: 36px;
+      }
+      .title{
+              display: inline-block;
+              border: 1px black solid;
+              border-radius: 50%;
+              width: 36px;
+              height: 36px;
+      }
+      .zurhicon{
+        margin-top: 10px; margin-left: 8px;
+      }
+      .titlename{
+        display: inline-block;
+              color: var(--Text-TextPrimary, #121316);
+              font-family: GIP;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+              margin-left: 10px;
+      }
+      .boxcontent{
+        display: inline-block; width: 384px; height: 435px;
+      }
+      .content{
+        margin-top: 20px; margin-left: 25px;
+      }
+      .price{
+              width: 336px;
+              height: 49px;
+              color: #303030;
+              font-family: Montserrat;
+              font-size: 40px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+      }
+      .pricetext{
+              width: 336px;
+              height: 20px;
+              color: #919191;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: normal;
+      }
+      .textincludes{
+                margin-bottom: 18px;
+                width: 280px;
+                height: 25px;
+                margin-top: 25px;
+                margin-left: 36px;
+                color: var(--Text-TextPrimary, #121316);
+                font-family: GIP;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+      }
+      .includebox{
+        color: var(--Text-TextSecondary, #3f4145);
+            font-family: GIP;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+      }
+      .includetext{
+        display: flex;
+        align-items: center; 
+        width: 336px; 
+        height: 15px;
+        margin-top: 24px;
+      }
+      .buttonstyle{
+              border-radius: 25px;
+              margin-top: 60px;
+              width: 336px;
+              height: 48px;
+              border: none;
+              background-color: #a4d1e2;
+      }
+      .includetext1{
+        display: inline-block; margin-left: 15px;
+      }
+      #background{
+        background-image: url(background.png) ;background-size: cover; font-style: normal; background-position: center;background-repeat: no-repeat;
+      }
+      #nav{
+        padding-top: 30px;margin-left: 116px;margin-right: 120px;display: flex;align-items: center;
+      }
+      #logo{
+        width: 101px;height: 35px;
+      }
+      #link{
+        display:flex;gap: 40px;margin-left: 730px; font-size: 18px;
+      }
+      #user{
+        width: 20px; height: 20px;
+      }
+      #language{
+        margin-left: 730px;
+      }
+      #puremagic{
+        font-size: 80px;font-family: Arial, Helvetica, sans-serif; color: rgba(232, 237, 242, 0.72); font-style: normal; font-weight: 400; line-height: 100%;
+      }
+      #awaits{
+        color: white;font-size: 250px; font-family: Arial, Helvetica, sans-serif;
+      }
+      #date{
+        color: white; font-size: 64px; font-family: Arial, Helvetica, sans-serif;
+      }
+      #popular{
+        border-radius: var(--radius-rounded-full, 9999px);
+        background: #6972B5;width: 85px;height: 20px;display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;color: white;
+      }
+      #locationcon{
+        width: 1200px;
+        height: 370px;
+        gap: 40px;
+        display: flex;
+        padding: 65px 119px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .imgbox{
+        border-radius: 40px;
+        width: 275.49px;
+        height: 370px;
+        flex-shrink: 0;
+        position: relative;
+        box-shadow: -8px -8px 0px 0px rgba(31, 114, 170, 0.46), 8px 8px 0px 0px rgba(41, 114, 139, 0.25);
+      }
+      .textcon{
+        display: inline-flex;
+        height: 350px;  
+        width: 255.49px;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        color: #FDFDFE;
+        text-align: center;
+        text-shadow: 0px 4px 4.9px rgba(0, 0, 0, 0.65);
+        font-family: "Bebas Neue";
+        font-size: 37px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+        position: absolute;
+      }
+      .image-one{
+        position: absolute;
+        top: 0;
+      }
+      .cardtext{
+        width: 232px;
+        height: auto;
+      }
+      #mapcon{
+        background-position: cover;
+        position: relative;
+      }
+      .mapimg{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+      .mapheader{
+        width: 100%;
+        height: 204px;
+        position: relative;
+        z-index: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+        align-content: flex-end;
+
+      }
+      .mapbody{
+        width: 100%;
+        height: 640px;
+        position: relative;
+        z-index: 0;
+      }
+      .leftcon{
+        width: 513px;
+        height: 580px;
+        position: relative;
+        top: 60px;
+        left: 120px;
+        right: 120px;
+        display: grid;
+        grid-row-gap: 20px;
+      }
+      .containers{
+        border-radius: 120px;
+        width: 513px;
+        height: 88px;
+        display: flex;
+        align-items: center;
+
+      }
+      .container1{
+        background-color: #EEE9D9;
+      }
+      .container2{
+
+        background: rgba(139, 184, 193, 0.80);
+      }
+      .container3{
+
+        background: rgba(170, 216, 215, 0.80);
+      }
+      .container4{
+        background: rgba(139, 192, 189, 0.80);
+      }
+      .container5{
+        background: rgba(151, 204, 224, 0.80);
+      }
+      .loctxt{
+        margin: 0 0 0 30px;
+        width: 453px;
+        height: 47px;
+      }
+      .locname{
+        display: flex;
+        align-items: flex-start;
+        display: flex;
+        justify-content: space-between;
+      }
+      .pinicon{
+        position: relative;
+        width: 12px;
+        height: 12px;
+      }
+      .loc1{
+        display: flex;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
+      }
+      div p{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        color: var(--text-text-accent-foreground, #18181B);
+        font-family: Montserrat;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      .cityname{
+        color: var(--text-text-foreground, #09090B);
+        font-family: GIP;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+      .bairshil{
+        display: flex;
+        flex-direction: column;
+      }
+      div img{
+        position: relative;
+        z-index: 0;
+      }
+      .daytxt{
+        position: relative;
+        z-index: 1;
+      }
+      .day{
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background-color: #F7F6F3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .frame{
+        display: flex;
+        width: 1200px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .mapfooter{
+        height: 120px;
+      }
+    </style>
+    <title>HEADER</title>
+    <link rel="stylesheet" href="header.css" />
+  </head>
+
+  <body>
+    <div id="background">
+        <div>
+            <div id="nav" >
+                <div >
+                    <img id="logo" src="logo 1.png" alt="logo" >
+                </div>
+                <div id="link">
+                    <a href="" target="_blank" class="word"">Home</a>
+                    <a href="" target="_blank" class="word"">About</a>
+                    <a href="" target="_blank" class="word"">Contact</a>
+                    <img src="user.png" alt="userlogo" id="user">
+                </div>
+                <img id="Language" src="Language.svg" alt="logo2 ">
+            </div>
+            <div style="text-align: center;">
+                <h2 id="puremagic" >PURE MAGIC</h2>
+                <h1 id="awaits" >AWAITS!</h1>
+                <h3 id="date" >2024</h3>
+            </div>
+        </div>
+    </div> 
+    <div class="boxcon">
+      <div class="box"
+    >
+      <div class="boxheader">
+        <div class="boxtitle"
+        >
+          <div class="title"
+          >
+            <img
+              class="zurhicon"
+              src="Icon.svg"
+              alt="zurh"
+            />
+          </div>
+          <span class="titlename"
+            >Budget Package</span
+          >
+        </div>
+      </div>
+      <div class="boxcontent" >
+        <div class="content" >
+          <div class="price"
+          >
+            500$
+          </div>
+          <div class="pricetext"
+          >
+            Essentials Covered
+          </div>
+          <div>
+            <div class="textincludes"
+            >
+              Includes:
+            </div>
+            <div class="includebox">
+            <div class="includetext">
+                <img src="check.svg" alt="" />
+                <div class="includetext1">
+                  Group transportation (shared van/bus)
+                </div>
+              </div>
+              <div class="includetext">
+                <img src="check.svg" alt="" />
+                <div class="includetext1">
+                  Standard accommodation (yurt or guesthouse)
+                </div>
+              </div>
+              <div class="includetext">
+                <img  src="check.svg" alt="" />
+                <div class="includetext1">
+                  Guided lake tour
+                </div>
+              </div>
+              <div class="includetext">
+                <img  src="check.svg" alt="" />
+                <div class="includetext1">
+                  1 meal per day (breakfast)
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="buttonstyle"
+          >
+            Select Package
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="box"
+    >
+      <div class="boxheader">
+        <div class="boxtitle"
+        >
+          <div class="title"
+          >
+            <img
+              class="zurhicon"
+              src="Icon.svg"
+              alt="zurh"
+            />
+          </div>
+
+          <span class="titlename"
+            >Standard Package</span
+          >
+        </div>
+      </div>
+      <div class="boxcontent" >
+        <div class="content" >
+          <div class="price"
+          >
+          800$
+          </div>
+          <div class="pricetext"
+          ><div>
+            Balanced Adventure
+          </div>
+          <div id="Popular">Popular
+          </div>
+          </div>
+          <div>
+            <div class="textincludes"
+            >
+              Includes:
+            </div>
+            <div class="includebox">
+            <div class="includetext">
+                <img src="check.svg" alt="" />
+                <div class="includetext1">
+                  Comfortable transportation (mini-bus)
+                </div>
+              </div>
+              <div class="includetext">
+                <img src="check.svg" alt="" />
+                <div class="includetext1">
+                  Mid-range accommodation (private yurt or lodge)
+                </div>
+              </div>
+              <div class="includetext">
+                <img  src="check.svg" alt="" />
+                <div class="includetext1">
+                  Guided lake tour + nearby hiking
+                </div>
+              </div>
+              <div class="includetext">
+                <img  src="check.svg" alt="" />
+                <div class="includetext1">
+                  2 meals per day (breakfast and dinner)
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <button class="buttonstyle"
+          >
+            Select Package
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="box"
+    >
+      <div class="boxheader">
+        <div class="boxtitle"
+        >
+          <div class="title"
+          >
+            <img
+              class="zurhicon"
+              src="Icon.svg"
+              alt="zurh"
+            />
+          </div>
+
+          <span class="titlename"
+            >Budget Package</span
+          >
+        </div>
+      </div>
+      <div class="boxcontent" >
+        <div class="content" >
+          <div class="price"
+          >
+            1200$
+          </div>
+          <div class="pricetext"
+          >
+          Ultimate Comfort
+          </div>
+          <div>
+            <div class="textincludes"
+            >
+              Includes:
+            </div>
+            <div class="includebox">
+            <div class="includetext">
+                <img src="check.svg" alt="" />
+                <div class="includetext1">
+                  Private transportation (SUV)
+                </div>
+              </div>
+              <div class="includetext">
+                <img src="check.svg" alt="" />
+                <div class="includetext1">
+                  Luxury accommodation (lakefront lodge)
+              </div>
+              </div>
+              <div class="includetext">
+                <img  src="check.svg" alt="" />
+                <div class="includetext1">
+                  Guided tours (lake + reindeer herder experience)
+                </div>
+              </div>
+              <div class="includetext">
+                <img  src="check.svg" alt="" />
+                <div class="includetext1">
+                  All meals included (local cuisine)
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="buttonstyle"
+          >
+            Select Package
+          </button>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div id="locationcon">
+        <div class="imgbox">
+          <img class="image-one" src="image.png" alt="terkhiin tsagaan nuur">
+          <div  class="textcon">
+            TERKHIIN TSAGAAN LAKE
+          </div>
+        </div>
+
+    <div class="imgbox">
+      <img class="image-one" src="image1.png" alt="Amarbaysgalant">
+      <div  class="textcon">
+        <p class="cardtext">
+          Amarbayasgalant Monastery
+        </p>
+      </div>
+    </div>
+  <div class="imgbox">
+    <img class="image-one" src="image2.png" alt="terkhiin tsagaan nuur">
+    <div  class="textcon">
+      Khuvsgul lake
+    </div>
+  </div>
+<div class="imgbox">
+  <img class="image-one" src="image3.png" alt="terkhiin tsagaan nuur">
+  <div  class="textcon">
+    Khorgiin togoo
+  </div>
+</div>
+    </div>
+    <div id="mapcon">
+      <img class="mapimg" src="Map Image.png" alt="">
+      <div class="mapheader">
+        <h1 class="headertext">Destination of Our Agency</h1>
+        <h5 class="headertext">Pack your bags and get ready</h5>
+      </div>
+      <div class="mapbody">
+        <div class="frame">
+          <div class="leftcon">
+            <div class="container1 containers">
+              <div class="loctxt">
+                <div class="locname">
+                  <div class="bairshil">
+                    <p class="cityname">Sukhbaatar square</p>
+                      <div class="loc1">
+                        <img class="pinicon" src="Pinicon.png" alt="">
+                        <p >Ulan bator</p>
+                      </div>
+                  </div>
+                  <div class="day">
+                    <span class="daytxt">Day 1</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container2 containers">
+              <div class="loctxt">
+                <div class="locname">
+                  <div class="bairshil">
+                    <p class="cityname">Amarbayasgalant Monastery</p>
+                      <div class="loc1">
+                        <img class="pinicon" src="Pinicon.png" alt="">
+                        <p >Bulgan</p>
+                      </div>
+                  </div>
+                  <div class="day">
+                    <span class="daytxt">Day 2</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container3 containers">
+              <div class="loctxt">
+                <div class="locname">
+                  <div class="bairshil">
+                    <p class="cityname">Khorgiin togoo</p>
+                      <div class="loc1">
+                        <img class="pinicon" src="Pinicon.png" alt="">
+                        <p >Arkhangai</p>
+                      </div>
+                  </div>
+                  <div class="day">
+                    <span class="daytxt">Day 3</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container4 containers">
+              <div class="loctxt">
+                <div class="locname">
+                  <div class="bairshil">
+                    <p class="cityname">Terkhiin tsagaan lake</p>
+                      <div class="loc1">
+                        <img class="pinicon" src="Pinicon.png" alt="">
+                        <p >Arkhangai</p>
+                      </div>
+                  </div>
+                  <div class="day">
+                    <span class="daytxt">Day 4</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container5 containers">
+              <div class="loctxt">
+                <div class="locname">
+                  <div class="bairshil">
+                    <p class="cityname">Khuvsgul lake</p>
+                      <div class="loc1">
+                        <img class="pinicon" src="Pinicon.png" alt="">
+                        <p >Khuvsgul</p>
+                      </div>
+                  </div>
+                  <div class="day">
+                    <span class="daytxt">Day 5</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+              </div>
+              <div class="rightcon">
+                    asdjhaksjdha
+              </div>
+            </div>
+      </div>
+      <div class="mapfooter"></div>
+    </div>
+        
+      </div>
+    </div>
+  </body>
+</html>
